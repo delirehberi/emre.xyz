@@ -129,13 +129,12 @@ class EmreHeader extends HTMLElement {
             if (darkStyle) darkStyle.disabled = true;
         };
 
-        // Initialize based on localStorage or OS
+        // Initialize based on localStorage, default to dark mode
         const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-            setDark();
-        } else {
+        if (savedTheme === 'light') {
             setLight();
+        } else {
+            setDark();
         }
         updateIcon();
 
