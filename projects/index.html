@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Emre Yılmaz</title>
+    <meta name="description"
+        content="Projects by Emre Yılmaz: Nostr apps, bots, Haskell libraries, browser extensions, writing and events.">
+    <meta name="author" content="Emre Yılmaz">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://emre.xyz/projects/">
+
+    <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)">
+
+    <meta property="og:site_name" content="emre.xyz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emre.xyz/projects/">
+    <meta property="og:title" content="Projects — Emre Yılmaz">
+    <meta property="og:description" content="Nostr apps, bots, Haskell libraries, browser extensions, writing and events.">
+    <meta property="og:image" content="https://emre.xyz/me.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@delirehberi">
+
+    <!-- Shared head: fonts, theme (applied before paint to avoid a flash), tokens + layout, chrome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        (function () {
+            var query = '(prefers-color-scheme: dark)';
+            var dark;
+            try {
+                var saved = localStorage.getItem('theme');
+                dark = saved ? saved === 'dark' : window.matchMedia(query).matches;
+            } catch (error) {
+                dark = window.matchMedia(query).matches;
+            }
+            if (dark) document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <link rel="stylesheet" href="/components/theme.css">
+    <link rel="stylesheet" href="/components/site.css">
+    <script type="module" src="/components/ui.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://emre.xyz/projects/#webpage",
+      "url": "https://emre.xyz/projects/",
+      "name": "Projects — Emre Yılmaz",
+      "isPartOf": { "@id": "https://emre.xyz/#website" },
+      "author": { "@id": "https://emre.xyz/#person" },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "NostrBridge", "url": "https://bridge.workouse.com" },
+          { "@type": "ListItem", "position": 2, "name": "Snips", "url": "https://snips.emre.xyz" },
+          { "@type": "ListItem", "position": 3, "name": "x2nostr", "url": "https://x2nostr.emre.xyz" },
+          { "@type": "ListItem", "position": 4, "name": "Nostr Web Hub", "url": "https://nostr.emre.xyz" },
+          { "@type": "ListItem", "position": 5, "name": "Photo", "url": "https://photo.emre.xyz" },
+          { "@type": "ListItem", "position": 6, "name": "100m", "url": "https://100m.workouse.com" },
+          { "@type": "ListItem", "position": 7, "name": "News", "url": "https://news.emre.xyz" },
+          { "@type": "ListItem", "position": 8, "name": "nostrullah", "url": "https://github.com/delirehberi/nostrullah" },
+          { "@type": "ListItem", "position": 9, "name": "nostr.hs", "url": "https://hackage.haskell.org/package/nostr" },
+          { "@type": "ListItem", "position": 10, "name": "hugo2nostr", "url": "https://github.com/delirehberi/hugo2nostr" },
+          { "@type": "ListItem", "position": 11, "name": "LLM Text Polisher", "url": "https://addons.mozilla.org/firefox/addon/ai-text-polisher/" },
+          { "@type": "ListItem", "position": 12, "name": "Blog", "url": "https://blog.emre.xyz" },
+          { "@type": "ListItem", "position": 13, "name": "Cal", "url": "https://cal.emre.xyz" },
+          { "@type": "ListItem", "position": 14, "name": "Anatolian Valhalla", "url": "https://anatolianvalhalla.com" },
+          { "@type": "ListItem", "position": 15, "name": "rehber.dev", "url": "https://rehber.dev" },
+          { "@type": "ListItem", "position": 16, "name": "cache-server", "url": "https://github.com/Nostr-org-tr/cache-server" },
+          { "@type": "ListItem", "position": 17, "name": "nostr-event-dom", "url": "https://github.com/Nostr-org-tr/nostr-event-dom" },
+          { "@type": "ListItem", "position": 18, "name": "sitemap-checker", "url": "https://github.com/workouse/sitemap-checker" },
+          { "@type": "ListItem", "position": 19, "name": "Anno" },
+          { "@type": "ListItem", "position": 20, "name": "Nostr-Newsletter" },
+          { "@type": "ListItem", "position": 21, "name": "Bilo-Bunker", "url": "https://github.com/workouse/bilo-bunker" },
+          { "@type": "ListItem", "position": 22, "name": "Blossom Media Server", "url": "https://github.com/Nostr-org-tr/blossom-serverless" },
+          { "@type": "ListItem", "position": 23, "name": "nostr-media-gallery", "url": "https://github.com/delirehberi/nostr-media-gallery" }
+        ]
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <emre-header active-page="projects"></emre-header>
+
+    <main id="main-content" class="page">
+
+        <header class="page-intro">
+            <h1>Projects</h1>
+            <p class="lede">Apps, bots, libraries and events I build and run. Most of it is open source and lives on the decentralized web.</p>
+        </header>
+
+        <nav class="anchors" aria-label="Project groups">
+            <ul class="inline-list">
+                <li><a href="#nostr-apps">Nostr apps &amp; infrastructure</a></li>
+                <li><a href="#bots">Bots &amp; automation</a></li>
+                <li><a href="#libraries">Libraries &amp; extensions</a></li>
+                <li><a href="#writing">Writing &amp; personal</a></li>
+                <li><a href="#events">Events</a></li>
+            </ul>
+        </nav>
+
+        <!-- Nostr apps -->
+        <section class="section" id="nostr-apps" aria-labelledby="nostr-apps-heading">
+            <div class="section-head">
+                <h2 id="nostr-apps-heading">Nostr apps &amp; infrastructure</h2>
+                <span class="count">12 projects</span>
+            </div>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://bridge.workouse.com" target="_blank" rel="noopener noreferrer">NostrBridge</a></h3>
+                        <span class="row-url">bridge.workouse.com</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Turns incoming webhooks from GitHub, Stripe or RSS into signed Nostr notes across 12 event kinds, at the Cloudflare edge, with Liquid templates and Zap billing.</p>
+                        <ul class="tags"><li>Cloudflare Workers</li><li>NIP-98</li><li>NIP-57</li><li>NIP-46</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a href="https://bridge.workouse.com" target="_blank" rel="noopener noreferrer" aria-label="NostrBridge overview">Overview</a>
+                        <a href="https://app.bridge.workouse.com" target="_blank" rel="noopener noreferrer" aria-label="NostrBridge dashboard">Dashboard</a>
+                        <a href="https://bridge.workouse.com/docs" target="_blank" rel="noopener noreferrer" aria-label="NostrBridge docs">Docs</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://snips.emre.xyz" target="_blank" rel="noopener noreferrer">Snips</a></h3>
+                        <span class="row-url">snips.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Code snippets and gists on Nostr (NIP-C0, <code>kind:1337</code>), with syntax highlighting for 25+ languages, Jupyter notebook rendering and Colab integration.</p>
+                        <ul class="tags"><li>NIP-C0</li><li>Jupyter</li><li>NIP-07</li><li>NIP-46</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://snips.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Open Snips">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://x2nostr.emre.xyz" target="_blank" rel="noopener noreferrer">x2nostr</a></h3>
+                        <span class="row-url">x2nostr.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Client-side migration tool that converts Goodreads logs, IMDb and Letterboxd ratings, Spotify history, Twitter archives and blogs into Nostr events.</p>
+                        <ul class="tags"><li>client-side</li><li>data portability</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://x2nostr.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Open x2nostr">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://nostr.emre.xyz">Nostr Web Hub</a></h3>
+                        <span class="row-url">nostr.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Serverless, read-only Nostr client that renders my <code>kind:1</code> notes for anyone on the web, with no login. Identity is verified via NIP-05.</p>
+                        <ul class="tags"><li>NIP-05</li><li>kind:1</li><li>Cloudflare</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://nostr.emre.xyz" aria-label="Open Nostr Web Hub">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://photo.emre.xyz" target="_blank" rel="noopener noreferrer">Photo</a></h3>
+                        <span class="row-url">photo.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Sovereign, decentralized event photo albums built on Nostr, Blossom media servers and the Lightning Network.</p>
+                        <ul class="tags"><li>Blossom</li><li>Lightning</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://photo.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Open Photo">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://100m.workouse.com" target="_blank" rel="noopener noreferrer">100m</a></h3>
+                        <span class="row-url">100m.workouse.com</span>
+                    </div>
+                    <div class="row-body">
+                        <p>A location-verified social room for real-world venues. You can only see and approach people once you're both verified at the same place. Privacy first, social second.</p>
+                        <ul class="tags"><li>location-verified</li><li>privacy</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://100m.workouse.com" target="_blank" rel="noopener noreferrer" aria-label="Open 100m">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://rehber.dev" target="_blank" rel="noopener noreferrer">rehber.dev</a></h3>
+                        <span class="row-url">rehber.dev</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Free NIP-05 identities (<code>name@rehber.dev</code>) with Lightning address redirection to Alby, Wallet of Satoshi or any custom wallet. No server setup needed.</p>
+                        <ul class="tags"><li>NIP-05</li><li>Lightning</li><li>TypeScript</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a href="https://rehber.dev" target="_blank" rel="noopener noreferrer" aria-label="Open rehber.dev">Open</a>
+                        <a href="https://github.com/Nostr-org-tr/rehber.dev" target="_blank" rel="noopener noreferrer" aria-label="rehber.dev on GitHub">GitHub</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/Nostr-org-tr/cache-server" target="_blank" rel="noopener noreferrer">cache-server</a></h3>
+                        <span class="row-url">github · Nostr-org-tr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>A pull-through cache Nostr relay built on Cloudflare Workers, Durable Objects (SQLite-backed WebSocket sessions) and D1.</p>
+                        <ul class="tags"><li>relay</li><li>Durable Objects</li><li>D1</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/Nostr-org-tr/cache-server" target="_blank" rel="noopener noreferrer" aria-label="cache-server on GitHub">GitHub</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3>Anno</h3>
+                        <span class="row-url">desktop · cross-platform</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Annotation and highlight engine for the desktop. It links highlights and community notes to the SHA-256 hash of any local document (PDF, Markdown, source code, text) and shares them over Nostr.</p>
+                        <ul class="tags"><li>In development</li><li>Desktop</li><li>SHA-256</li><li>Nostr</li></ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3>Nostr-Newsletter</h3>
+                        <span class="row-url">email · Nostr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Email campaign manager. It fetches Nostr events by your preferences, generates emails from them and sends them to your newsletter subscribers.</p>
+                        <ul class="tags"><li>In development</li><li>Email</li><li>Nostr</li></ul>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/workouse/bilo-bunker" target="_blank" rel="noopener noreferrer">Bilo-Bunker</a></h3>
+                        <span class="row-url">github · workouse</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Server-based Nostr bunker: a remote signer that keeps your keys off the client.</p>
+                        <ul class="tags"><li>In development</li><li>NIP-46</li><li>Server</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/workouse/bilo-bunker" target="_blank" rel="noopener noreferrer" aria-label="Bilo-Bunker on GitHub">GitHub</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/Nostr-org-tr/blossom-serverless" target="_blank" rel="noopener noreferrer">Blossom Media Server</a></h3>
+                        <span class="row-url">github · Nostr-org-tr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Fork of blossom-serverless with an added UI dashboard. It currently serves media.nostr.org.tr and media.emre.xyz.</p>
+                        <ul class="tags"><li>Blossom</li><li>Fork</li><li>Dashboard</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/Nostr-org-tr/blossom-serverless" target="_blank" rel="noopener noreferrer" aria-label="Blossom Media Server on GitHub">GitHub</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Bots & automation -->
+        <section class="section" id="bots" aria-labelledby="bots-heading">
+            <div class="section-head">
+                <h2 id="bots-heading">Bots &amp; automation</h2>
+                <span class="count">2 projects</span>
+            </div>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://news.emre.xyz">News</a></h3>
+                        <span class="row-url">news.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>A fully autonomous, self-hosted AI news aggregator.</p>
+                        <ul class="tags"><li>Cloudflare Workers</li><li>Vectorize</li><li>D1</li><li>Nostr</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://news.emre.xyz" aria-label="Open News">Open</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/delirehberi/nostrullah" target="_blank" rel="noopener noreferrer">nostrullah</a></h3>
+                        <span class="row-url">github · nostrullah</span>
+                    </div>
+                    <div class="row-body">
+                        <p>A serverless, headless Nostr bot that generates content with Workers AI (gpt-oss) and publishes it to relays on a configurable schedule and set of categories.</p>
+                        <ul class="tags"><li>Cloudflare Workers</li><li>Workers AI</li><li>Nostr</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/delirehberi/nostrullah" target="_blank" rel="noopener noreferrer" aria-label="nostrullah on GitHub">GitHub</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Libraries, CLIs & extensions -->
+        <section class="section" id="libraries" aria-labelledby="libraries-heading">
+            <div class="section-head">
+                <h2 id="libraries-heading">Libraries, CLIs &amp; extensions</h2>
+                <span class="count">6 projects</span>
+            </div>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://hackage.haskell.org/package/nostr" target="_blank" rel="noopener noreferrer">nostr.hs</a></h3>
+                        <span class="row-url">hackage · nostr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Nostr client library for Haskell: typed protocol models, Schnorr signing, NIP-01, 02, 05 and 19, plus NIP-34 git events.</p>
+                        <ul class="tags"><li>Haskell</li><li>NIP-01</li><li>NIP-19</li><li>NIP-34</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a href="https://hackage.haskell.org/package/nostr" target="_blank" rel="noopener noreferrer" aria-label="nostr.hs on Hackage">Hackage</a>
+                        <a href="https://github.com/delirehberi/nostr.hs" target="_blank" rel="noopener noreferrer" aria-label="nostr.hs on GitHub">GitHub</a>
+                        <a href="https://gitworkshop.dev/delirehberi@emre.xyz/relay.ngit.dev/nostr-hs" target="_blank" rel="noopener noreferrer" aria-label="nostr.hs on GitWorkshop">GitWorkshop</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/delirehberi/hugo2nostr" target="_blank" rel="noopener noreferrer">hugo2nostr</a></h3>
+                        <span class="row-url">github · hugo2nostr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>CLI that publishes Hugo blog posts to Nostr as NIP-23 long-form articles (<code>kind:30023</code>) and syncs them back from relays.</p>
+                        <ul class="tags"><li>CLI</li><li>NIP-23</li><li>Hugo</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a href="https://github.com/delirehberi/hugo2nostr" target="_blank" rel="noopener noreferrer" aria-label="hugo2nostr on GitHub">GitHub</a>
+                        <a href="https://gitworkshop.dev/delirehberi@emre.xyz/relay.ngit.dev/hugo2nostr" target="_blank" rel="noopener noreferrer" aria-label="hugo2nostr on GitWorkshop">GitWorkshop</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://addons.mozilla.org/firefox/addon/ai-text-polisher/" target="_blank" rel="noopener noreferrer">LLM Text Polisher</a></h3>
+                        <span class="row-url">ai-polish-text · Firefox &amp; Chrome</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Browser extension: select text anywhere, right-click or press <kbd>Alt+P</kbd>, and polish it with your own LLM endpoint (OpenAI, Claude, Ollama, Groq, Together AI, vLLM, LM Studio and more).</p>
+                        <ul class="tags"><li>Manifest V3</li><li>Firefox</li><li>Chrome</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://addons.mozilla.org/firefox/addon/ai-text-polisher/" target="_blank" rel="noopener noreferrer" aria-label="LLM Text Polisher on Firefox Add-ons">Firefox Add-ons</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/Nostr-org-tr/nostr-event-dom" target="_blank" rel="noopener noreferrer">nostr-event-dom</a></h3>
+                        <span class="row-url">github · Nostr-org-tr</span>
+                    </div>
+                    <div class="row-body">
+                        <p>A lightweight, zero-config Web Component (<code>&lt;nostr-event&gt;</code>) that embeds and renders Nostr events on any website.</p>
+                        <ul class="tags"><li>Web Components</li><li>TypeScript</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a href="https://nostr-org-tr.github.io/nostr-event-dom/" target="_blank" rel="noopener noreferrer" aria-label="nostr-event-dom demo">Demo</a>
+                        <a href="https://github.com/Nostr-org-tr/nostr-event-dom" target="_blank" rel="noopener noreferrer" aria-label="nostr-event-dom on GitHub">GitHub</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/workouse/sitemap-checker" target="_blank" rel="noopener noreferrer">sitemap-checker</a></h3>
+                        <span class="row-url">github · workouse</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Validates XML sitemaps and sitemap index files and finds broken links.</p>
+                        <ul class="tags"><li>Go</li><li>SEO</li><li>CLI</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/workouse/sitemap-checker" target="_blank" rel="noopener noreferrer" aria-label="sitemap-checker on GitHub">GitHub</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://github.com/delirehberi/nostr-media-gallery" target="_blank" rel="noopener noreferrer">nostr-media-gallery</a></h3>
+                        <span class="row-url">github · delirehberi</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Browser extension that builds a responsive media gallery from any Nostr user's posts. Open a profile, click the extension icon and browse their images and videos full-screen with a lightbox.</p>
+                        <ul class="tags"><li>In development</li><li>Browser extension</li><li>Firefox</li><li>Chrome</li><li>Edge</li></ul>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://github.com/delirehberi/nostr-media-gallery" target="_blank" rel="noopener noreferrer" aria-label="nostr-media-gallery on GitHub">GitHub</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Writing & personal -->
+        <section class="section" id="writing" aria-labelledby="writing-heading">
+            <div class="section-head">
+                <h2 id="writing-heading">Writing &amp; personal</h2>
+                <span class="count">2 projects</span>
+            </div>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://blog.emre.xyz">Blog</a></h3>
+                        <span class="row-url">blog.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>My personal blog on software development, art history, poetry and life, mostly in Turkish.</p>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://blog.emre.xyz" aria-label="Read the blog">Read</a>
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://cal.emre.xyz" target="_blank" rel="noopener noreferrer">Cal</a></h3>
+                        <span class="row-url">cal.emre.xyz</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Book a call with me.</p>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://cal.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Book a call">Book</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Events -->
+        <section class="section" id="events" aria-labelledby="events-heading">
+            <div class="section-head">
+                <h2 id="events-heading">Events</h2>
+                <span class="count">1 project</span>
+            </div>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://anatolianvalhalla.com" target="_blank" rel="noopener noreferrer">Anatolian Valhalla</a></h3>
+                        <span class="row-url">anatolianvalhalla.com</span>
+                    </div>
+                    <div class="row-body">
+                        <p>Big parties, plus private monthly gatherings for beer and conversation. I'm the main organiser. To join the private community, ask at an event or <a href="mailto:z@emre.xyz?subject=Anatolian%20Valhalla">email me</a>.</p>
+                    </div>
+                    <div class="row-links">
+                        <a class="arrow-link" href="https://anatolianvalhalla.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Anatolian Valhalla">Visit</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <emre-footer></emre-footer>
+</body>
+
+</html>

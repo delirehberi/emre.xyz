@@ -1,0 +1,247 @@
+/* Page-specific pieces for emre.xyz (home + projects). Shared layout lives in theme.css.
+ * Hallmark · genre: modern-minimal · macrostructure: Index-First · theme: Cobalt · design-system: design.md */
+
+/* ---------- Home: intro ---------- */
+
+.intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: end;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    min-width: 0;
+}
+
+.role {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: var(--leading-snug);
+    color: var(--color-ink);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm) var(--space-md);
+    padding-top: var(--space-2xs);
+    font-size: var(--text-sm);
+}
+
+.whoami {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    border: var(--rule-width) solid var(--color-rule);
+    border-radius: var(--radius-md);
+    background: var(--color-paper-2);
+    min-width: 0;
+}
+
+/* ---------- Two-column capability rows ---------- */
+
+.row-pair {
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+}
+
+.stack {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-ink-3);
+}
+
+/* ---------- Graphite band (one per page) ---------- */
+
+.band {
+    margin-inline: calc(50% - 50vw);
+    padding: var(--space-2xl) var(--page-gutter);
+    background: var(--color-band);
+    color: var(--color-band-ink-2);
+}
+
+.band-inner {
+    max-width: calc(var(--page-max) - 2 * var(--page-gutter));
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.band h2 {
+    color: var(--color-band-ink);
+}
+
+.band .label {
+    color: var(--color-band-accent);
+}
+
+.band p {
+    color: var(--color-band-ink-2);
+}
+
+.band .kv dt {
+    color: var(--color-band-ink-2);
+}
+
+.band .kv dd {
+    color: var(--color-band-ink);
+}
+
+.band a {
+    color: var(--color-band-ink);
+    text-decoration-color: var(--color-band-rule);
+}
+
+.band a:hover {
+    color: var(--color-band-accent);
+    text-decoration-color: currentColor;
+}
+
+.band-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.band-facts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border: var(--rule-width) solid var(--color-band-rule);
+    border-radius: var(--radius-md);
+}
+
+.band .btn-band {
+    background: var(--color-band-accent);
+    color: var(--color-band);
+}
+
+.band .btn-band:hover {
+    background: var(--color-band-ink);
+    color: var(--color-band);
+}
+
+/* ---------- Communities ---------- */
+
+.communities li {
+    display: flex;
+    gap: var(--space-2xs);
+    align-items: baseline;
+    white-space: nowrap;
+}
+
+.communities .when {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-ink-3);
+}
+
+/* ---------- Elsewhere ---------- */
+
+.more summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-height: 2.75rem;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    color: var(--color-ink-3);
+    list-style: none;
+}
+
+.more summary::-webkit-details-marker {
+    display: none;
+}
+
+.more summary::before {
+    content: "+";
+    font-family: var(--font-mono);
+}
+
+.more[open] summary::before {
+    content: "−";
+}
+
+.more summary:hover {
+    color: var(--color-ink);
+}
+
+.more .inline-list {
+    padding-top: var(--space-xs);
+}
+
+/* ---------- Projects page ---------- */
+
+.page-intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.anchors {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
+    padding: var(--space-xs) 0;
+    background: var(--color-paper);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+    font-size: var(--text-sm);
+}
+
+.anchors a {
+    color: var(--color-ink-3);
+    text-decoration: none;
+}
+
+.anchors a:hover {
+    color: var(--color-accent);
+}
+
+.count {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-ink-3);
+}
+
+/* ---------- 404 ---------- */
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding-block: var(--space-2xl);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 60rem) {
+    .intro,
+    .band-inner,
+    .row-pair {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .intro {
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 40rem) {
+    .band {
+        padding-block: var(--space-xl);
+    }
+
+    .anchors {
+        position: static;
+    }
+}

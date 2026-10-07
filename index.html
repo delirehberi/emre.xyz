@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emre Yılmaz (@delirehberi) - Senior Full-Stack Engineer</title>
+    <title>Emre Yılmaz — Full-Stack Architect &amp; Consultant</title>
     <meta name="description"
-        content="Personal landing page and hub of Emre Yılmaz (@delirehberi), Senior Practical Full-Stack Engineer shipping since 2005. Decentralized Web (Nostr), Haskell, Node.js, Python, Nix.">
+        content="Full-stack architect and engineering consultant shipping software since 2005. Fractional tech leadership, polyglot backends (Haskell, Python, PHP, Node.js), Nix, and decentralized systems on Nostr and Lightning.">
     <meta name="author" content="Emre Yılmaz">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://emre.xyz/">
+    <link rel="webmention" href="https://webmention.io/emre.xyz/webmention" />
 
-    <!-- Mobile Theme Color -->
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:site_name" content="emre.xyz">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://emre.xyz/">
-    <meta property="og:title" content="Emre Yılmaz (@delirehberi) - Senior Full-Stack Engineer">
+    <meta property="og:title" content="Emre Yılmaz — Full-Stack Architect &amp; Consultant">
     <meta property="og:description"
-        content="Senior Practical Full-Stack Engineer shipping since 2005. Decentralized Web (Nostr), Haskell, Node.js, Python, Nix, and scalable web systems.">
+        content="Shipping software since 2005. Architecture, polyglot backends, reproducible infrastructure, and decentralized systems on Nostr and Lightning.">
     <meta property="og:image" content="https://emre.xyz/me.jpg">
     <meta property="og:image:alt" content="Emre Yılmaz (@delirehberi)">
     <meta property="og:locale" content="en_US">
@@ -33,54 +33,31 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@delirehberi">
     <meta name="twitter:creator" content="@delirehberi">
-    <meta name="twitter:title" content="Emre Yılmaz (@delirehberi) - Senior Full-Stack Engineer">
+    <meta name="twitter:title" content="Emre Yılmaz — Full-Stack Architect &amp; Consultant">
     <meta name="twitter:description"
-        content="Senior Practical Full-Stack Engineer shipping since 2005. Decentralized Web (Nostr), Haskell, Node.js, Python, Nix, and scalable web systems.">
+        content="Shipping software since 2005. Architecture, polyglot backends, reproducible infrastructure, and decentralized systems on Nostr and Lightning.">
     <meta name="twitter:image" content="https://emre.xyz/me.jpg">
     <meta name="twitter:image:alt" content="Emre Yılmaz (@delirehberi)">
 
-    <!-- Preconnect & Resource Hints -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://esm.sh">
-    <link rel="dns-prefetch" href="https://github.com">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration for Custom Colors/Fonts -->
+    <!-- Shared head: fonts, theme (applied before paint to avoid a flash), tokens + layout, chrome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        slate: {
-                            850: '#1e293b', // Custom darker slate
-                            900: '#0f172a',
-                        },
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Fira Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                    }
-                }
+        (function () {
+            var query = '(prefers-color-scheme: dark)';
+            var dark;
+            try {
+                var saved = localStorage.getItem('theme');
+                dark = saved ? saved === 'dark' : window.matchMedia(query).matches;
+            } catch (error) {
+                dark = window.matchMedia(query).matches;
             }
-        }
+            if (dark) document.documentElement.classList.add('dark');
+        })();
     </script>
-
-    <!-- Theme CSS and Components -->
     <link rel="stylesheet" href="/components/theme.css">
+    <link rel="stylesheet" href="/components/site.css">
     <script type="module" src="/components/ui.js"></script>
-
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -91,1022 +68,306 @@
           "@type": "WebSite",
           "@id": "https://emre.xyz/#website",
           "url": "https://emre.xyz/",
-          "name": "Emre Yılmaz Hub",
-          "description": "Personal landing page and hub of Emre Yılmaz (@delirehberi), Senior Practical Full-Stack Engineer.",
+          "name": "Emre Yılmaz — Engineering Consulting & Architecture",
+          "description": "Personal site of Emre Yılmaz, full-stack architect and engineering consultant.",
           "inLanguage": "en-US"
         },
         {
           "@type": "ProfilePage",
           "@id": "https://emre.xyz/#webpage",
           "url": "https://emre.xyz/",
-          "name": "Emre Yılmaz (@delirehberi) - Senior Full-Stack Engineer",
-          "isPartOf": {
-            "@id": "https://emre.xyz/#website"
-          },
-          "about": {
-            "@id": "https://emre.xyz/#person"
-          },
-          "mainEntity": {
-            "@id": "https://emre.xyz/#person"
-          }
+          "name": "Emre Yılmaz (@delirehberi) — Full-Stack Architect & Consultant",
+          "isPartOf": { "@id": "https://emre.xyz/#website" },
+          "about": { "@id": "https://emre.xyz/#person" },
+          "mainEntity": { "@id": "https://emre.xyz/#person" }
         },
         {
-          "@type": "Person",
+          "@type": ["Person", "ProfessionalService"],
           "@id": "https://emre.xyz/#person",
           "name": "Emre Yılmaz",
           "alternateName": "delirehberi",
-          "jobTitle": "Senior Practical Full-Stack Engineer",
+          "jobTitle": "Full-Stack Architect & Engineering Consultant",
           "url": "https://emre.xyz/",
           "image": "https://emre.xyz/me.jpg",
           "email": "mailto:z@emre.xyz",
-          "description": "Veteran full-stack engineer and open-source contributor with over two decades of hands-on web development shipping continuously since 2005.",
+          "description": "Full-stack architect and consultant shipping software since 2005. Polyglot backends, reproducible infrastructure, and decentralized systems.",
+          "priceRange": "$$$$",
           "knowsAbout": [
-            "Full-Stack Development",
-            "Decentralized Web",
-            "Nostr Protocol",
-            "Haskell",
-            "Node.js",
-            "Python",
-            "Django",
-            "Symfony",
-            "PHP",
-            "Nix",
-            "Docker",
-            "Cloudflare Workers",
-            "Tailwind CSS",
-            "React",
-            "Bitcoin Lightning"
+            "Software Architecture & Consulting",
+            "Fractional Tech Leadership",
+            "Polyglot Backend Systems",
+            "Haskell Functional Programming",
+            "Python & Django Architecture",
+            "PHP & Symfony Enterprise Systems",
+            "Node.js & TypeScript Ecosystem",
+            "Nix, NixOS & Reproducible Infrastructure",
+            "Docker & Microservices",
+            "Decentralized Web & Nostr Protocol",
+            "Bitcoin Lightning Network",
+            "React & Next.js Modern Frontends"
           ],
           "sameAs": [
+            "https://cal.emre.xyz",
+            "https://gitworkshop.dev/delirehberi@emre.xyz/",
             "https://github.com/delirehberi",
             "https://linkedin.com/in/delirehberi",
-            "https://lobste.rs/~delirehberi",
+            "https://www.upwork.com/freelancers/~0193fd6a7c0c7d5cb0",
             "https://dev.to/delirehberi",
             "https://stackoverflow.com/users/673223/delirehberi",
+            "https://lobste.rs/~delirehberi",
             "https://youtube.com/@delirehberi",
             "https://t.me/delirehberi",
-            "https://bsky.app/profile/emre.xyz",
-            "https://www.goodreads.com/user/show/25148560-emre",
-            "https://www.imdb.com/user/p.febeayahsjg2oatzn5bvzjwngm/",
-            "https://tr.wikipedia.org/wiki/Kullan%C4%B1c%C4%B1:Delirehberi",
-            "https://hub.docker.com/u/delirehberi",
-            "https://delirehberi.medium.com/",
-            "https://www.instagram.com/delirehberi_th",
-            "https://www.upwork.com/freelancers/~0193fd6a7c0c7d5cb0"
+            "https://bsky.app/profile/emre.xyz"
           ]
         }
       ]
     }
     </script>
-
-    <style>
-        body {
-            font-family: 'Fira Sans', sans-serif;
-        }
-
-        /* Custom Scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-    </style>
 </head>
 
-<body
-    class="bg-gray-50 text-slate-800 transition-colors duration-300 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Accessible Skip Link -->
-    <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none">
-        Skip to main content
-    </a>
-
-    <!-- Shared Emre Header -->
     <emre-header active-page="home"></emre-header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="flex-grow w-full max-w-2xl mx-auto px-6 py-8 md:py-16">
+    <main id="main-content" class="page">
 
-        <!-- Hero / Introduction -->
-        <header class="text-center mb-12">
-            <div class="relative inline-block mb-6 group">
-                <!-- Profile Image sourced from GitHub with explicit dimensions and high fetch priority -->
-                <div
-                    class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105">
-                    <img src="https://github.com/delirehberi.png"
-                        alt="Emre Yılmaz (@delirehberi) profile portrait"
-                        width="160"
-                        height="160"
-                        fetchpriority="high"
-                        decoding="async"
-                        class="w-full h-full object-cover">
-                </div>
-                <!-- Status indicator -->
-                <div class="absolute bottom-2 right-2 md:right-4 w-5 h-5 bg-green-500 border-4 border-white dark:border-slate-900 rounded-full"
-                    title="Available for work" aria-label="Available for work"></div>
-            </div>
-
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-slate-900 dark:text-white">
-                Emre Yılmaz
-            </h1>
-            <p class="text-primary-600 dark:text-primary-400 font-medium mb-4">@delirehberi</p>
-
-            <p class="text-sm font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-6">
-                Senior Practical Full-Stack Engineer &mdash; Shipping since 2005
-            </p>
-
-            <div class="text-left max-w-xl mx-auto space-y-5">
-                <p class="text-gray-600 dark:text-slate-300 leading-relaxed text-sm">
-                    Veteran full-stack engineer and open-source contributor with over two decades of hands-on
-                    web development. Shipping continuously since 2005, I have lived through the entire evolution
-                    of the modern web stack&mdash;which gives me a grounded intuition for why today's patterns
-                    exist and when to reach for them.
+        <!-- Intro -->
+        <section class="intro" aria-labelledby="intro-heading">
+            <div class="intro-text">
+                <h1 id="intro-heading">Emre Yılmaz</h1>
+                <p class="role">Full-stack architect &amp; consultant. Shipping software since 2005.</p>
+                <p class="lede">
+                    I help founders and engineering teams design, audit and ship software that stays maintainable.
+                    Typed functional backends in Haskell, production services in Python, PHP and Node.js,
+                    reproducible infrastructure with Nix, and decentralized systems on Nostr and Lightning.
                 </p>
-                <p class="text-gray-600 dark:text-slate-300 leading-relaxed text-sm">
-                    My strength is breadth paired with pragmatism. I work across paradigms and pick the right
-                    tool for the job rather than forcing everything through a single lens.
-                </p>
-
-                <div class="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800/60 p-4 space-y-3">
-                    <h3 class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        <i class="ph-duotone ph-globe-hemisphere-west text-base text-purple-500" aria-hidden="true"></i>
-                        Decentralized Web
-                    </h3>
-                    <p class="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
-                        Open-source contributor and application builder on top of the <span class="font-medium text-slate-800 dark:text-slate-100">Nostr protocol</span>.
-                    </p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="https://cal.emre.xyz" target="_blank" rel="noopener noreferrer">Book a call</a>
+                    <a href="mailto:z@emre.xyz">Email</a>
+                    <a href="/resume.pdf">Résumé (PDF)</a>
+                    <a href="https://github.com/delirehberi" target="_blank" rel="noopener noreferrer me">GitHub</a>
                 </div>
+            </div>
 
-                <div class="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800/60 p-4 space-y-3">
-                    <h3 class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        <i class="ph-duotone ph-code text-base text-primary-500" aria-hidden="true"></i>
-                        Polyglot Backend Engineering
-                    </h3>
-                    <ul class="space-y-2 text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
-                        <li class="flex gap-2"><i class="ph-fill ph-caret-right text-primary-400 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span><span class="font-medium text-slate-800 dark:text-slate-100">Haskell</span> &mdash; strongly-typed functional programming</span></li>
-                        <li class="flex gap-2"><i class="ph-fill ph-caret-right text-primary-400 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span><span class="font-medium text-slate-800 dark:text-slate-100">PHP / Symfony</span> &mdash; structured enterprise frameworks</span></li>
-                        <li class="flex gap-2"><i class="ph-fill ph-caret-right text-primary-400 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span><span class="font-medium text-slate-800 dark:text-slate-100">Python / Django</span> &mdash; rapid application development</span></li>
-                        <li class="flex gap-2"><i class="ph-fill ph-caret-right text-primary-400 mt-0.5 flex-shrink-0" aria-hidden="true"></i><span><span class="font-medium text-slate-800 dark:text-slate-100">Node.js</span> &mdash; asynchronous runtime environments</span></li>
-                    </ul>
+            <aside class="whoami" aria-label="At a glance">
+                <span class="label">whoami</span>
+                <dl class="kv">
+                    <dt>handle</dt>
+                    <dd>delirehberi</dd>
+                    <dt>since</dt>
+                    <dd>2005</dd>
+                    <dt>stack</dt>
+                    <dd>Haskell, Python, PHP, Node.js, Nix</dd>
+                    <dt>nostr</dt>
+                    <dd>delirehberi@emre.xyz</dd>
+                    <dt>lightning</dt>
+                    <dd>delirehberi@emre.xyz</dd>
+                    <dt>email</dt>
+                    <dd><a href="mailto:z@emre.xyz">z@emre.xyz</a></dd>
+                </dl>
+            </aside>
+        </section>
+
+        <!-- Selected projects -->
+        <section class="section" aria-labelledby="projects-heading">
+            <div class="section-head">
+                <h2 id="projects-heading">Selected projects</h2>
+                <p>Things I build and run, mostly on the open, decentralized web.</p>
+            </div>
+
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://bridge.workouse.com" target="_blank" rel="noopener noreferrer">NostrBridge</a></h3>
+                        <span class="row-url">bridge.workouse.com</span>
+                    </div>
+                    <p>Turns incoming webhooks from GitHub, Stripe or RSS into signed Nostr notes, running on Cloudflare Workers with Liquid templates and Zap billing.</p>
+                    <a class="arrow-link row-links" href="https://bridge.workouse.com" target="_blank" rel="noopener noreferrer" aria-label="Visit NostrBridge">Visit</a>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://snips.emre.xyz" target="_blank" rel="noopener noreferrer">Snips</a></h3>
+                        <span class="row-url">snips.emre.xyz</span>
+                    </div>
+                    <p>Code snippets and gists on Nostr (NIP-C0, <code>kind:1337</code>) with syntax highlighting and Jupyter notebook rendering.</p>
+                    <a class="arrow-link row-links" href="https://snips.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Visit Snips">Visit</a>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://x2nostr.emre.xyz" target="_blank" rel="noopener noreferrer">x2nostr</a></h3>
+                        <span class="row-url">x2nostr.emre.xyz</span>
+                    </div>
+                    <p>Client-side migration tool that converts Goodreads, IMDb, Letterboxd, Spotify, Twitter archives and blogs into Nostr events.</p>
+                    <a class="arrow-link row-links" href="https://x2nostr.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Visit x2nostr">Visit</a>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://photo.emre.xyz" target="_blank" rel="noopener noreferrer">Photo</a></h3>
+                        <span class="row-url">photo.emre.xyz</span>
+                    </div>
+                    <p>Sovereign event photo albums built on Nostr, Blossom media servers and the Lightning Network.</p>
+                    <a class="arrow-link row-links" href="https://photo.emre.xyz" target="_blank" rel="noopener noreferrer" aria-label="Visit Photo">Visit</a>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://hackage.haskell.org/package/nostr" target="_blank" rel="noopener noreferrer">nostr.hs</a></h3>
+                        <span class="row-url">hackage · nostr</span>
+                    </div>
+                    <p>Nostr client library for Haskell: typed protocol models, Schnorr signing, NIP-01, 02, 05 and 19.</p>
+                    <a class="arrow-link row-links" href="https://hackage.haskell.org/package/nostr" target="_blank" rel="noopener noreferrer" aria-label="View nostr.hs on Hackage">Hackage</a>
+                </li>
+            </ul>
+
+            <p class="section-foot"><a class="arrow-link" href="/projects/">All projects</a></p>
+        </section>
+
+        <!-- What I do -->
+        <section class="section" aria-labelledby="work-heading">
+            <div class="section-head">
+                <h2 id="work-heading">What I do</h2>
+                <p>Senior engineering for teams that need it without the overhead of a full-time hire.</p>
+            </div>
+
+            <ul class="index">
+                <li class="row row-pair">
+                    <h3>Architecture &amp; fractional leadership</h3>
+                    <div class="row-body">
+                        <p>Architecture roadmaps, codebase audits, refactoring plans and reproducible developer environments.</p>
+                        <span class="stack">audits · API &amp; schema design · Nix · Docker</span>
+                    </div>
+                </li>
+                <li class="row row-pair">
+                    <h3>Polyglot backend &amp; full-stack</h3>
+                    <div class="row-body">
+                        <p>Backend services and the interfaces on top of them, in whichever language fits the problem.</p>
+                        <span class="stack">Haskell · Python/Django · PHP/Symfony · Node.js · React</span>
+                    </div>
+                </li>
+                <li class="row row-pair">
+                    <h3>Decentralized systems</h3>
+                    <div class="row-body">
+                        <p>Nostr protocol work, Lightning payments and custom integrations.</p>
+                        <span class="stack">Nostr NIPs · LNURL · Lightning · Shopify</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Nostr & Lightning identity (the page's one dark band) -->
+        <section class="band" aria-labelledby="nostr-heading">
+            <div class="band-inner">
+                <div class="band-copy">
+                    <span class="label">Nostr &amp; Lightning</span>
+                    <h2 id="nostr-heading">Find me on the open protocols.</h2>
+                    <p>My identity is verified through NIP-05 on this domain, and the same address takes Lightning zaps. My code also lives on Nostr, through GitWorkshop.</p>
+                    <div class="actions">
+                        <a class="btn btn-band" href="lightning:delirehberi@emre.xyz">Send a zap</a>
+                        <a href="https://gitworkshop.dev/delirehberi@emre.xyz/" target="_blank" rel="noopener noreferrer">Repos on GitWorkshop</a>
+                        <a href="https://nostr.emre.xyz">Read my notes</a>
+                    </div>
                 </div>
-
-                <div class="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800/60 p-4 space-y-3">
-                    <h3 class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        <i class="ph-duotone ph-wrench text-base text-teal-500" aria-hidden="true"></i>
-                        Reproducible Infrastructure &amp; DevOps
-                    </h3>
-                    <p class="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
-                        <span class="font-medium text-slate-800 dark:text-slate-100">Nix</span> for bulletproof local environments;
-                        <span class="font-medium text-slate-800 dark:text-slate-100">Docker</span> for application isolation and predictable production deployments.
-                    </p>
+                <div class="band-facts">
+                    <dl class="kv">
+                        <dt>NIP-05</dt>
+                        <dd>delirehberi@emre.xyz</dd>
+                        <dt>Lightning</dt>
+                        <dd>delirehberi@emre.xyz</dd>
+                        <dt>Git</dt>
+                        <dd>gitworkshop.dev</dd>
+                    </dl>
                 </div>
-
-                <div class="rounded-xl border border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-800/60 p-4 space-y-3">
-                    <h3 class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        <i class="ph-duotone ph-browser text-base text-pink-500" aria-hidden="true"></i>
-                        Frontend &amp; Commercial Stacks
-                    </h3>
-                    <p class="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
-                        <span class="font-medium text-slate-800 dark:text-slate-100">React, Next.js, Tailwind CSS</span> for optimised UIs;
-                        extensive customisation of <span class="font-medium text-slate-800 dark:text-slate-100">Shopify</span> (plugins &amp; templates),
-                        <span class="font-medium text-slate-800 dark:text-slate-100">WordPress</span>, and <span class="font-medium text-slate-800 dark:text-slate-100">Webflow</span>.
-                    </p>
-                </div>
-
-                <blockquote class="flex gap-3 rounded-xl border border-primary-100 dark:border-primary-900/40 bg-primary-50 dark:bg-primary-900/20 p-4">
-                    <i class="ph-duotone ph-map-trifold text-xl text-primary-500 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
-                    <p class="italic text-gray-500 dark:text-slate-400 text-sm leading-relaxed">
-                        &ldquo;I look at technical documentation not as a crutch, but as a map to rapidly deploy stable, scalable, and decentralised web systems.&rdquo;
-                    </p>
-                </blockquote>
-            </div>
-        </header>
-
-        <!-- Links Section: Professional & Code -->
-        <section aria-labelledby="section-professional" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-professional" class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="ph-duotone ph-code text-blue-500" aria-hidden="true"></i> Professional &amp; Code
-                </h2>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Lobsters -->
-                <a href="https://lobste.rs/~delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-gray-600 dark:bg-gray-900/30 dark:text-gray-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-link text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            Lobsters</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Link sharing</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-primary-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-gray-900 dark:hover:border-white transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-gray-900 dark:bg-slate-700 dark:text-white group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-github-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-semibold text-slate-900 dark:text-white">GitHub</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Code &amp; Open Source</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-700 dark:hover:border-blue-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-linkedin-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            LinkedIn</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Connect professionally</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-700 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Upwork -->
-                <a href="https://www.upwork.com/freelancers/~0193fd6a7c0c7d5cb0" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-file-code text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            Upwork</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Freelance Profile</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-primary-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Resume -->
-                <a href="https://emre.xyz/resume.pdf" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-file-text text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Resume</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Professional CV</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Mail -->
-                <a href="mailto:z@emre.xyz" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-envelope text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            Mail</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">z@emre.xyz</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-primary-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Dev.to -->
-                <a href="https://dev.to/delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-slate-900 dark:hover:border-white transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-slate-900 dark:bg-slate-700 dark:text-white group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-dev-to-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-semibold text-slate-900 dark:text-white">Dev.to</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Technical writing</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Stack Overflow -->
-                <a href="https://stackoverflow.com/users/673223/delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-orange-500 dark:hover:border-orange-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-stack-overflow-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                            Stack Overflow</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Q&amp;A</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-orange-500 transition-colors" aria-hidden="true"></i>
-                </a>
             </div>
         </section>
 
-        <!-- Links Section: Talks & Presentations -->
-        <section aria-labelledby="section-talks" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-talks" class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="ph-duotone ph-presentation text-red-500" aria-hidden="true"></i> Talks &amp; Presentations
-                </h2>
+        <!-- Talks & communities -->
+        <section class="section" aria-labelledby="talks-heading">
+            <div class="section-head">
+                <h2 id="talks-heading">Talks &amp; communities</h2>
             </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Nostr: A Protocol for Freedom of Speech -->
-                <a href="https://www.slideshare.net/slideshow/nostr-a-protocol-for-freedom-of-speech/284524621" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            Nostr: A Protocol for Freedom of Speech</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Devfest Istanbul 2025 (Slides)</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
 
-                <!-- Bluesky: Giving Freedom to Public Again -->
-                <a href="https://www.youtube.com/watch?v=TGUdPB2QJbk" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
+            <ul class="index">
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://www.slideshare.net/slideshow/nostr-a-protocol-for-freedom-of-speech/284524621" target="_blank" rel="noopener noreferrer">Nostr: Protocol for Freedom of Speech</a></h3>
                     </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Bluesky: Giving Freedom to Public Again</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Meetup 37 &mdash; Teknasyon Starship Academy</p>
+                    <p class="muted">DevFest Istanbul 2025</p>
+                    <span class="row-url row-links">Slides</span>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://www.youtube.com/watch?v=VIBPfXmkvr8" target="_blank" rel="noopener noreferrer" lang="tr">Nix, NixOS ve NixOps ile Cloud Yönetimi</a></h3>
                     </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
+                    <p class="muted">GDG Cloud</p>
+                    <span class="row-url row-links">Video</span>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://www.youtube.com/watch?v=TGUdPB2QJbk" target="_blank" rel="noopener noreferrer">Bluesky: Giving Freedom to Public Again</a></h3>
+                    </div>
+                    <p class="muted">Starship Academy</p>
+                    <span class="row-url row-links">Video</span>
+                </li>
+                <li class="row">
+                    <div class="row-title">
+                        <h3><a href="https://www.youtube.com/watch?v=xbeWTD1dyPU" target="_blank" rel="noopener noreferrer" lang="tr">Haskell ile Oyun ve Sistem Geliştirme</a></h3>
+                    </div>
+                    <p class="muted">Haskell Türkiye</p>
+                    <span class="row-url row-links">Video</span>
+                </li>
+            </ul>
 
-                <!-- Fully-featured Blog Software (Workshop) -->
-                <a href="https://www.youtube.com/watch?v=jrpEMfx13zg" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Fully-featured Blog Software</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Workshop &mdash; GDG DevFest Izmir 2019</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Google Cloud Sunucularını Nix, NixOS & NixOps ile Yönetmek -->
-                <a href="https://www.youtube.com/watch?v=VIBPfXmkvr8" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Nix, NixOS ve NixOps ile Cloud Yönetimi</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">GDG Cloud Ankara</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Geçmişten Geleni Kaybetmeden Geleceğe Oynamak! -->
-                <a href="https://www.youtube.com/watch?v=AQI64IUpVDI" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Ge&ccedil;mi&#351;ten Geleni Kaybetmeden Gelece&#287;e Oynamak!</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">GDG Izmir</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Wasp - 30 Dakikada Öğrenilebilen Yazılım Dili -->
-                <a href="https://www.youtube.com/watch?v=ErLQMi_IoQw" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Wasp: 30 Dakikada &Ouml;&#287;renilebilen Yaz&#305;l&#305;m Dili</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Tech Talk</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- PHP Symfony ile Güzel -->
-                <a href="https://www.youtube.com/watch?v=YeDjDVckwm0" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            PHP Symfony ile G&uuml;zel</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Karab&uuml;k &Uuml;niversitesi</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- PHP'nin geçmişi, bugünü, geleceği -->
-                <a href="https://www.youtube.com/watch?v=toweqQQDVwE" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            PHP'nin Ge&ccedil;mi&#351;i, Bug&uuml;n&uuml;, Gelece&#287;i</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">AnkaraPHP</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Haskell ile AgarIO benzeri oyun yapımı (Bölüm 1) -->
-                <a href="https://www.youtube.com/watch?v=xbeWTD1dyPU" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Haskell ile Agar.io Oyunu (B&ouml;l&uuml;m 1)</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Haskell T&uuml;rkiye</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Câri Açık - agar.io benzeri oyun yapımı ikinci bölüm -->
-                <a href="https://www.youtube.com/watch?v=nu_ttkvkNJY" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            C&acirc;ri A&ccedil;&#305;k: Agar.io Oyunu (B&ouml;l&uuml;m 2)</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Haskell T&uuml;rkiye</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Data.Traversable & Lenses -->
-                <a href="https://www.youtube.com/watch?v=Wp5Puu8Hkz0" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Data.Traversable &amp; Lenses</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Haskell T&uuml;rkiye</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Haskell Türkiye Meetup #2 -->
-                <a href="https://www.youtube.com/watch?v=kW0KjR40nII" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            Haskell T&uuml;rkiye Meetup #2</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Haskell T&uuml;rkiye</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- ActivityPub -->
-                <a href="https://www.slideshare.net/slideshow/activitypub/123282157" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            ActivityPub</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">DevFest (Slides)</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Symfony 3 -->
-                <a href="https://www.slideshare.net/slideshow/symfony-3-56034343/56034343" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            Symfony 3</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Presentation (Slides)</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Teknolojiyi Sömürmek -->
-                <a href="https://www.slideshare.net/slideshow/teknolojiyi-smrmek-gdgankara/55125724" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            Teknolojiyi S&ouml;m&uuml;rmek</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">GDG Ankara (Slides)</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Symfony2 & doctrine -->
-                <a href="https://www.slideshare.net/slideshow/symfony2-doctrine/42879246" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4 pr-6">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            Symfony2 &amp; Doctrine</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Presentation (Slides)</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
+            <div class="section-head">
+                <h3>Communities I founded or organised</h3>
             </div>
+            <ul class="inline-list communities">
+                <li><a href="https://github.com/aydinyazilimciagi" target="_blank" rel="noopener noreferrer">Aydın Yazılımcı Ağı</a> <span class="when">2022–now</span></li>
+                <li><a href="https://nostr.org.tr" target="_blank" rel="noopener noreferrer">Nostr Türkiye</a></li>
+                <li><a href="https://github.com/AnkaraPHP" target="_blank" rel="noopener noreferrer">AnkaraPHP</a> <span class="when">2016–2022</span></li>
+                <li><a href="https://github.com/haskellturkiye" target="_blank" rel="noopener noreferrer">Haskell Türkiye</a> <span class="when">founder</span></li>
+                <li><a href="https://github.com/Webendorg" target="_blank" rel="noopener noreferrer">WebEnd Events</a> <span class="when">founder</span></li>
+                <li>Devİzmir <span class="when">2013–2015</span></li>
+                <li>WTK İzmir <span class="when">2014</span></li>
+                <li><a href="https://anatolianvalhalla.com" target="_blank" rel="noopener noreferrer">Anatolian Valhalla</a> <span class="when">organiser</span></li>
+            </ul>
         </section>
 
-        <!-- Links Section: Social & Community -->
-        <section aria-labelledby="section-social" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-social" class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="ph-duotone ph-users text-purple-500" aria-hidden="true"></i> Social &amp; Community
-                </h2>
+        <!-- Elsewhere -->
+        <section class="section" aria-labelledby="elsewhere-heading">
+            <div class="section-head">
+                <h2 id="elsewhere-heading">Elsewhere</h2>
             </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Telegram -->
-                <a href="https://t.me/delirehberi" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-sky-400 dark:hover:border-sky-300 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-sky-50 text-sky-500 dark:bg-sky-900/30 dark:text-sky-300 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-telegram-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-500 dark:group-hover:text-sky-300 transition-colors">
-                            Telegram</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">@delirehberi</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-sky-400 transition-colors" aria-hidden="true"></i>
-                </a>
 
-                <!-- Reddit -->
-                <a href="https://www.reddit.com/user/aybarscengaver/" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-orange-600 dark:hover:border-orange-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-reddit-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-orange-700 dark:group-hover:text-orange-400 transition-colors">
-                            Reddit</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">u/aybarscengaver</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-orange-600 transition-colors" aria-hidden="true"></i>
-                </a>
+            <ul class="inline-list">
+                <li><a href="https://github.com/delirehberi" target="_blank" rel="noopener noreferrer me">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/delirehberi" target="_blank" rel="noopener noreferrer me">LinkedIn</a></li>
+                <li><a href="https://www.upwork.com/freelancers/~0193fd6a7c0c7d5cb0" target="_blank" rel="noopener noreferrer">Upwork</a></li>
+                <li><a href="https://stackoverflow.com/users/673223/delirehberi" target="_blank" rel="noopener noreferrer me">Stack Overflow</a></li>
+                <li><a href="https://dev.to/delirehberi" target="_blank" rel="noopener noreferrer me">dev.to</a></li>
+                <li><a href="https://bsky.app/profile/emre.xyz" target="_blank" rel="noopener noreferrer me">Bluesky</a></li>
+                <li><a href="https://lobste.rs/~delirehberi" target="_blank" rel="noopener noreferrer me">Lobsters</a></li>
+                <li><a href="https://youtube.com/@delirehberi" target="_blank" rel="noopener noreferrer me">YouTube</a></li>
+            </ul>
 
-                <!-- YouTube -->
-                <a href="https://youtube.com/@delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-red-500 dark:hover:border-red-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-youtube-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                            YouTube</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Tech talks &amp; Tutorials</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-red-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/delirehberi_th" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-pink-500 dark:hover:border-pink-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-instagram-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
-                            Instagram</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">@delirehberi_th</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-pink-500 transition-colors" aria-hidden="true"></i>
-                </a>
-            </div>
+            <details class="more">
+                <summary>More profiles</summary>
+                <ul class="inline-list">
+                    <li><a href="https://www.goodreads.com/user/show/25148560-emre" target="_blank" rel="noopener noreferrer me">Goodreads</a></li>
+                    <li><a href="https://www.imdb.com/user/p.febeayahsjg2oatzn5bvzjwngm/" target="_blank" rel="noopener noreferrer me">IMDb</a></li>
+                    <li><a href="https://www.flickr.com/people/theylmz/" target="_blank" rel="noopener noreferrer me">Flickr</a></li>
+                    <li><a href="https://soundcloud.com/delirehberi" target="_blank" rel="noopener noreferrer me">SoundCloud</a></li>
+                    <li><a href="https://creators.spotify.com/pod/profile/delirehberi/" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+                    <li><a href="https://delirehberi.medium.com/" target="_blank" rel="noopener noreferrer me">Medium</a></li>
+                    <li><a href="https://t.me/delirehberi" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+                    <li><a href="https://hub.docker.com/u/delirehberi" target="_blank" rel="noopener noreferrer">Docker Hub</a></li>
+                    <li><a href="https://tr.wikipedia.org/wiki/Kullan%C4%B1c%C4%B1:Delirehberi" target="_blank" rel="noopener noreferrer me">Wikipedia</a></li>
+                    <li><a href="https://www.tiktok.com/@delirehberi" target="_blank" rel="noopener noreferrer me">TikTok</a></li>
+                </ul>
+            </details>
         </section>
 
-        <!-- Links Section: Hobbies & Interests -->
-        <section aria-labelledby="section-hobbies" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-hobbies" class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="ph-duotone ph-star text-yellow-500" aria-hidden="true"></i> Hobbies &amp; Interests
-                </h2>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Goodreads -->
-                <a href="https://www.goodreads.com/user/show/25148560-emre" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-amber-700 dark:hover:border-amber-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-books text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition-colors">
-                            Goodreads</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Books &amp; Reading list</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-amber-700 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- IMDB -->
-                <a href="https://www.imdb.com/user/p.febeayahsjg2oatzn5bvzjwngm?ref_=hm_nv_profile" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-yellow-500 dark:hover:border-yellow-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-film-strip text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
-                            IMDB</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Movies &amp; Watchlist</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-yellow-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Wikipedia -->
-                <a href="https://tr.wikipedia.org/wiki/Kullan%C4%B1c%C4%B1:Delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-gray-500 dark:hover:border-gray-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-gray-700 dark:bg-slate-700 dark:text-gray-300 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-book-open text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
-                            Wikipedia</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">TR contributor</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-gray-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- SlideShare -->
-                <a href="https://www.slideshare.net/AybarsCENGAVER" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-presentation-chart text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
-                            SlideShare</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Presentations</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-600 transition-colors" aria-hidden="true"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Links Section: Support & Wishlists -->
-        <section aria-labelledby="section-support" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-support" class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <i class="ph-duotone ph-coffee text-amber-600" aria-hidden="true"></i> Support &amp; Wishlists
-                </h2>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2">
-                <!-- Book Wishlist -->
-                <a href="https://www.goodreads.com/review/list/25148560?tag=wish-list" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-amber-700 dark:hover:border-amber-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-gift text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-400 transition-colors">
-                            Book Wishlist</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Goodreads</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-amber-700 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- BTC Lightning -->
-                <a href="lightning:delirehberi@emre.xyz" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-yellow-500 dark:hover:border-yellow-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-lightning text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
-                            BTC Lightning</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">delirehberi@emre.xyz</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-yellow-500 transition-colors" aria-hidden="true"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Links Section: Archive / Less Active -->
-        <section aria-labelledby="section-archive" class="mt-12">
-            <div class="mb-6">
-                <h2 id="section-archive" class="text-xl font-bold text-slate-500 dark:text-slate-400 flex items-center gap-2 opacity-80">
-                    <i class="ph-duotone ph-archive text-gray-400" aria-hidden="true"></i> Archive / Less Active
-                </h2>
-            </div>
-            <div class="grid gap-4 md:grid-cols-2 opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
-                <!-- Bluesky -->
-                <a href="https://bsky.app/profile/emre.xyz" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-sky-500 dark:hover:border-sky-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-butterfly text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
-                            Bluesky</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">@emre.xyz</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-sky-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Docker Hub -->
-                <a href="https://hub.docker.com/u/delirehberi" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-cube text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            Docker Hub</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Container images</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-blue-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- TikTok -->
-                <a href="https://www.tiktok.com/@delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-slate-900 dark:hover:border-white transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-slate-900 dark:bg-slate-700 dark:text-white group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-tiktok-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-semibold text-slate-900 dark:text-white">TikTok</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">@delirehberi</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Medium -->
-                <a href="https://delirehberi.medium.com/" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-slate-900 dark:hover:border-white transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-gray-100 text-slate-900 dark:bg-slate-700 dark:text-white group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-medium-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="font-semibold text-slate-900 dark:text-white">Medium</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Articles</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Spotify -->
-                <a href="https://creators.spotify.com/pod/profile/delirehberi/" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-green-500 dark:hover:border-green-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-spotify-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                            Spotify</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Podcast</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-green-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Ekşi Sözlük -->
-                <a href="https://eksisozluk.com/biri/theylmz" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-green-600 dark:hover:border-green-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-hash text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
-                            Ek&#351;i S&ouml;zl&uuml;k</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Turkish social dictionary</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-green-600 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Guru -->
-                <a href="https://www.guru.com/freelancers/delirehberi" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-teal-500 dark:hover:border-teal-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-briefcase text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
-                            Guru</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Freelance Profile</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-teal-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Arguman -->
-                <a href="https://arguman.org/users/aybarscengaver" target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-violet-500 dark:hover:border-violet-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-chat-teardrop-dots text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                            Arg&uuml;man</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Argument mapping</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-violet-500 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Flickr -->
-                <a href="https://www.flickr.com/people/theylmz/" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-pink-600 dark:hover:border-pink-400 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-camera text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-pink-700 dark:group-hover:text-pink-400 transition-colors">
-                            Flickr</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Photography</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-pink-600 transition-colors" aria-hidden="true"></i>
-                </a>
-
-                <!-- Soundcloud -->
-                <a href="https://soundcloud.com/delirehberi" target="_blank" rel="noopener noreferrer me"
-                    class="group relative flex items-center p-4 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-primary-500 dark:hover:border-primary-500 transition-all duration-200">
-                    <div
-                        class="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 group-hover:scale-110 transition-transform duration-200">
-                        <i class="ph-duotone ph-soundcloud-logo text-2xl" aria-hidden="true"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3
-                            class="font-semibold text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                            Soundcloud</h3>
-                        <p class="text-sm text-gray-500 dark:text-slate-400">Some poetry records</p>
-                    </div>
-                    <i
-                        class="ph-bold ph-arrow-up-right absolute top-4 right-4 text-gray-300 dark:text-slate-600 group-hover:text-primary-500 transition-colors" aria-hidden="true"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Bitcoin Lightning Message Board Section -->
-        <section aria-labelledby="section-messageboard" class="mt-12 text-center text-sm text-gray-500 dark:text-slate-400">
-            <h2 id="section-messageboard" class="sr-only">Lightning Message Board</h2>
-            <script type="module" src="https://esm.sh/@getalby/lightning-messageboard@latest"></script>
-            <lightning-messageboard nwc-url="nostr+walletconnect://4581b6bd679f5e0eabab26bf32b78cbf877dfef83bb52970fff8109fcb5be726?relay=wss://relay.getalby.com/v1&secret=252326d9f945d3566e74ce1b7c75def7c327b07513b4718c7f9f27734a049ff4"></lightning-messageboard>
-        </section>
     </main>
 
-    <!-- Shared Emre Footer -->
     <emre-footer></emre-footer>
 </body>
 

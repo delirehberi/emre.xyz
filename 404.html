@@ -1,123 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Emre Yılmaz</title>
+    <title>Page not found — Emre Yılmaz</title>
     <meta name="description" content="The page you are looking for does not exist or has been moved.">
     <meta name="robots" content="noindex, follow">
 
-    <!-- Preconnect hints -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://unpkg.com">
+    <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Configuration -->
+    <!-- Shared head: fonts, theme (applied before paint to avoid a flash), tokens + layout, chrome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        slate: {
-                            850: '#1e293b',
-                            900: '#0f172a',
-                        },
-                        primary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Fira Sans', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-                    }
-                }
+        (function () {
+            var query = '(prefers-color-scheme: dark)';
+            var dark;
+            try {
+                var saved = localStorage.getItem('theme');
+                dark = saved ? saved === 'dark' : window.matchMedia(query).matches;
+            } catch (error) {
+                dark = window.matchMedia(query).matches;
             }
-        }
+            if (dark) document.documentElement.classList.add('dark');
+        })();
     </script>
-
-    <!-- Theme CSS and Components -->
     <link rel="stylesheet" href="/components/theme.css">
+    <link rel="stylesheet" href="/components/site.css">
     <script type="module" src="/components/ui.js"></script>
-
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <style>
-        body {
-            font-family: 'Fira Sans', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-50 text-slate-800 transition-colors duration-300 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Shared Emre Header -->
-    <emre-header></emre-header>
+    <emre-header active-page="none"></emre-header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="flex-grow flex items-center justify-center w-full max-w-2xl mx-auto px-6 py-16 text-center">
-        <div class="space-y-6">
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-2">
-                <i class="ph-duotone ph-compass text-4xl"></i>
+    <main id="main-content" class="page">
+        <section class="not-found" aria-labelledby="not-found-heading">
+            <span class="label">404</span>
+            <h1 id="not-found-heading">Page not found.</h1>
+            <p class="lede">This page doesn't exist, or it has moved.</p>
+            <div class="actions">
+                <a class="btn btn-primary" href="/">Back to home</a>
+                <a href="/projects/">Projects</a>
+                <a href="https://blog.emre.xyz">Blog</a>
+                <a href="https://news.emre.xyz">News</a>
             </div>
-
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
-                404 &mdash; Page Not Found
-            </h1>
-
-            <p class="text-base md:text-lg text-gray-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
-                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-            </p>
-
-            <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
-                <a href="https://emre.xyz"
-                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium bg-primary-600 hover:bg-primary-700 text-white shadow-sm hover:shadow transition-all duration-200">
-                    <i class="ph-bold ph-house"></i>
-                    <span>Back to Home</span>
-                </a>
-                <a href="https://blog.emre.xyz"
-                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-500 text-slate-800 dark:text-slate-200 shadow-sm transition-all duration-200">
-                    <i class="ph-bold ph-newspaper"></i>
-                    <span>Visit Blog</span>
-                </a>
-                <a href="https://news.emre.xyz"
-                    class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 hover:border-primary-500 dark:hover:border-primary-500 text-slate-800 dark:text-slate-200 shadow-sm transition-all duration-200">
-                    <i class="ph-bold ph-rss"></i>
-                    <span>Tech News</span>
-                </a>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Shared Emre Footer -->
     <emre-footer></emre-footer>
 </body>
 

@@ -1,0 +1,13 @@
+[
+  {
+    "date": "2026-10-06",
+    "scope": "app",
+    "macrostructure": "Index-First",
+    "theme": "Cobalt",
+    "genre": "modern-minimal",
+    "nav": "bordered flush bar (Cobalt)",
+    "footer": "Ft2 Inline single line",
+    "enrichment": "none",
+    "brief": "emre.xyz personal hub redesign + /projects/ index"
+  }
+]

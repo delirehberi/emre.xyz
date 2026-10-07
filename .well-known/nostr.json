@@ -5,6 +5,7 @@
     "relays": {
         "46f3c7bb33cc3019049b76dc89dbb96e34c247bdda68b6ad8632682793ff8a1a": [
             "wss://relay.emre.xyz",
+            "wss://relay.nostr.org.tr",
             "wss://relay.nostr.band",
             "wss://relay.damus.io",
             "wss://relay.snort.social",
@@ -13,7 +14,6 @@
             "wss://nostr.mom",
             "wss://relay.nos.social",
             "wss://articles.layer3.news",
-            "wss://mls.akdeniz.edu.tr/nostr"
         ]
     }
 }
